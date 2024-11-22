@@ -166,7 +166,7 @@
               <p>User</p>
             </a>
           </li> -->
-          <li class="nav-header">Log</li>
+          <li class="nav-header">Settings</li>
           <li class="nav-item">
             <a href="<?= site_url('/logout') ?>" class="nav-link">
               <i class="nav-icon fas fa-circle"></i>
