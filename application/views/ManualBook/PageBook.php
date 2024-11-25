@@ -106,8 +106,9 @@
 </div>
 
 
+<?php if($logged_in): ?>
 <!-- Kategori Modal -->
-<form action="<?= site_url('save-kategorimb') ?>" method="POST">
+    <form action="<?= site_url('save-kategorimb') ?>" method="POST">
     <div class="modal fade" id="kategoriModal">
         <div class="modal-dialog modal-sm">
           <div class="modal-content">
@@ -152,7 +153,9 @@
     </div>
 </form>
 <!-- End Kategori Modal -->
+<?php endif; ?>
 
+<?php if($logged_in): ?>
 <!-- Halaman Modal -->
 <form action="<?= site_url('save-book') ?>" method="POST" enctype="multipart/form-data">
     <div class="modal fade" id="halamanModal">
@@ -237,6 +240,7 @@
     </div>
 </form>
 <!-- End Halaman Modal -->
+<?php endif; ?>
 
 
 

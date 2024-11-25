@@ -71,8 +71,8 @@
 </style>
 
 
-<!-- Action Card -->
 <?php if($logged_in): ?>
+<!-- Action Card -->
 <div class="card">
     <div class="card-body">
         <!-- Hapus -->
@@ -82,8 +82,8 @@
         <button type="button" class="btn btn-warning float-right" data-toggle="modal" data-target="#modalImage">Edit Halaman</button>
     </div>
 </div>
-<?php endif; ?>
 <!-- End Action Card -->
+<?php endif; ?>
 
 <!-- Carousel -->
 <div id="demo" class="carousel slide shadow mb-5" data-ride="carousel">
@@ -122,6 +122,7 @@
 <!-- End Carousel -->
 
 
+<?php if($logged_in): ?>
 <!-- Edit Modal -->
 <form action="<?= site_url('update/' . $mb['id']); ?>" method="post" enctype="multipart/form-data">
     <div class="modal fade" id="modalImage">
@@ -229,11 +230,7 @@
     </div>
 </form>
 <!-- End Edit Modal -->
-
-
-
-
-<!-- <div id="debug-message" style="display: none; background-color: #f9f9f9; padding: 10px; border: 1px solid #ccc;"></div> -->
+<?php endif; ?>
 
 <script>
     $(document).ready(function() {
@@ -333,8 +330,9 @@
             checkboxes.prop('checked', $(this).is(':checked'));
         });
 
+        <?php if($logged_in): ?>
         // Delete Checked
-        $('#deleteImg').on('click', function() {
+            $('#deleteImg').on('click', function() {
             var checked = $('#tableImage').find(':checkbox:checked');
             var idsToDelete = checked.map(function() {
                 return $(this).data('id');
@@ -364,6 +362,7 @@
                 toastr.warning('Pilih gambar yang ingin dihapus');
             }
         });
+        <?php endif; ?>
 
 
 

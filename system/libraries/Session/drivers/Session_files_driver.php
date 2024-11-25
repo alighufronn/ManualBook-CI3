@@ -237,7 +237,7 @@ class CI_Session_files_driver extends CI_Session_driver implements SessionHandle
 	 * @return	bool
 	 */
 	#[ReturnTypeWillChange]
-	public function write(string $session_id, string $session_data): bool
+	public function write($session_id, $session_data)
 	{
 		// If the two IDs don't match, we have a session_regenerate_id() call
 		// and we need to close the old handle and open a new one

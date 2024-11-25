@@ -1,6 +1,9 @@
-<div class="card">
+<?php if($logged_in): ?>
+  <div class="card">
     <div class="card-header">
-        <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#addUser">Tambah User</button>
+        <?php if($logged_in): ?>
+          <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#addUser">Tambah User</button>
+        <?php endif; ?>
     </div>
     <div class="card-body">
         <table class="table table-hover table-striped">
@@ -15,9 +18,11 @@
                     <tr>
                         <td id="getUsername"><?= $user['username'] ?></td>
                         <td class="text-center">
-                            <button type="button" class="btn btn-warning" id="btnEdit" data-toggle="modal"
-                            data-target="#editUser" data-id="<?= $user['id'] ?>"><i class="fas fa-edit"></i></button>
-                            <a href="<?= site_url('users/delete-user/' . $user['id']) ?>" class="btn btn-danger" id="btnDelete" onclick="return confirm('Apakah anda yakin ingin menghapus User ini?');"><i class="fas fa-trash"></i></a>
+                            <?php if($logged_in): ?>
+                              <button type="button" class="btn btn-warning" id="btnEdit" data-toggle="modal"
+                              data-target="#editUser" data-id="<?= $user['id'] ?>"><i class="fas fa-edit"></i></button>
+                              <a href="<?= site_url('users/delete-user/' . $user['id']) ?>" class="btn btn-danger" id="btnDelete" onclick="return confirm('Apakah anda yakin ingin menghapus User ini?');"><i class="fas fa-trash"></i></a>
+                            <?php endif; ?>
                         </td>
                     </tr>
                 <?php endforeach; ?>
@@ -88,6 +93,8 @@
         </div>
     </div>
 </form>
+<?php endif; ?>
+
 
 
 <script>

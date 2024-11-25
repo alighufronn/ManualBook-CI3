@@ -42,6 +42,11 @@ class AuthController extends CI_Controller {
 
     public function user()
     {
+        if (!$this->session->userdata('logged_in')) {
+            redirect('login');
+            return;
+        }
+
         $data['users'] = $this->UserModel->getUser();
 
         $data['title'] = 'User Control';
