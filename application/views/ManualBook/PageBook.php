@@ -205,15 +205,6 @@
                         </div>
                     </div>
                </div>
-
-                <!-- Gambar -->
-                <!-- <div class="form-group">
-                    <label for="">Pilih Gambar</label>
-                    <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="customFile" name="gambar[]" multiple>
-                        <label class="custom-file-label" for="customFile">Choose file</label>
-                    </div>
-                </div> -->
                 
                 <div class="table-responsive" style="max-height: 400px;">
                     <table id="tableImage" class="table table-striped table-hover table-sm text-sm">
@@ -241,6 +232,7 @@
 </form>
 <!-- End Halaman Modal -->
 <?php endif; ?>
+<span class="custom-file-input"></span>
 
 
 
@@ -350,12 +342,7 @@
             // Save to local storage 
             localStorage.setItem('selectedCategory', selectedCategory); 
             localStorage.setItem('selectedText', selectedText);
-        });
-        
-
-        // Alert
-        
-
+        });        
 
         // Multiple Image
         document.querySelector('.custom-file-input').addEventListener('change', function(e) {

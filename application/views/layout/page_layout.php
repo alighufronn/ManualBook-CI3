@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title><?= isset($title) ? $title : 'Manual Book'; ?></title>
 
+
+  <script src="<?php echo('https://code.jquery.com/jquery-3.7.0.min.js')?>"></script>
+  <script src="<?= base_url('assets/AdminLTE/plugins/jquery/jquery.min.js') ?>"></script>
+
    <!-- Google Font: Source Sans Pro -->
    <link rel="stylesheet" href="<?php echo('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback') ?>">
    <!-- Font Awesome -->
@@ -37,10 +41,8 @@
    <link rel="stylesheet" href="<?= base_url('assets/AdminLTE/dist/css/style.css') ?>">
    <!-- DataTables -->
    <link rel="stylesheet" href="<?php echo('https://cdn.datatables.net/2.1.5/css/dataTables.jqueryui.min.css') ?>">
-   <script src="<?php echo('https://code.jquery.com/jquery-3.7.0.min.js')?>"></script> 
-   <script src="<?php echo('https://cdn.datatables.net/2.1.5/js/dataTables.min.js')?>"></script> 
-   <script src="<?php echo('https://cdn.datatables.net/2.1.5/js/dataTables.jqueryui.min.js')?>"></script>
-   <link rel="stylesheet" href="<?= base_url('AdminLTE/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css')?>">
+   
+   <link rel="stylesheet" href="<?= base_url('assets/AdminLTE/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css')?>">
     
     <link rel="stylesheet" href="<?= base_url('assets/AdminLTE/plugins/datatables-buttons/css/buttons.bootstrap4.min.css')?>">
     <link rel="stylesheet" href="<?= base_url('assets/AdminLTE/plugins//datatables-fixedcolumns/css/fixedColumns.bootstrap4.css')?>">
@@ -50,10 +52,6 @@
 
     <!-- Lightbox -->
     <link href="<?php echo('https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css')?>" rel="stylesheet">
-    <script src="<?php echo('https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js') ?>"></script>
-
-   <!-- Bootstrap -->
-   <script src="<?php echo('https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js')?>"></script>
 
 
    <!-- DataTables Editor -->
@@ -61,7 +59,13 @@
     <link rel="stylesheet" href="<?php echo('https://cdn.datatables.net/buttons/3.1.2/css/buttons.dataTables.css') ?>">
     <link rel="stylesheet" href="<?php echo('https://cdn.datatables.net/select/2.1.0/css/select.dataTables.css') ?>">
     <link rel="stylesheet" href="<?php echo('https://cdn.datatables.net/datetime/1.5.4/css/dataTables.dateTime.min.css') ?>">
- 
+    <link rel="stylesheet" type="text/css" href="<?php echo('https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css') ?>">
+
+    
+    <link rel="stylesheet" href="<?php echo('https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css') ?>">
+
+
+
   <style>
     
   </style>
@@ -225,12 +229,36 @@
 
 
 
+<!-- <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        swal({ title: 'Hello!', text: 'SweetAlert is working!', icon: 'success' });
+    });
+</script> -->
 
+<script>
+        $(document).ready(function() {
+          var myVariable = {
+            adjust: function() {
+              console.log("Adjust function called");
+            }
+          };
 
+          if (myVariable && typeof myVariable.adjust === "function") {
+            myVariable.adjust();
+          } else {
+            console.log("Adjust function is not defined");
+          };
+        });
+</script>
 
-
+<script src="<?php echo('https://malsup.github.io/jquery.cycle.all.js') ?>"></script>
+<script type="text/javascript" charset="utf8" src="<?php echo('https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js') ?>"></script>
+<script src="<?php echo('https://cdn.datatables.net/2.1.5/js/dataTables.min.js')?>"></script> 
+<script src="<?php echo('https://cdn.datatables.net/2.1.5/js/dataTables.jqueryui.min.js')?>"></script>
+<script src="<?php echo('https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js') ?>"></script>
+<script src="<?= base_url('assets/AdminLTE/plugins/bootstrap/js/bootstrap.min.js')?>"></script>
+<script src="<?php echo('https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js') ?>"></script>
 <!-- jQuery -->
-<script src="<?= base_url('assets/AdminLTE/plugins/jquery/jquery.min.js') ?>"></script>
 <!-- jQuery UI 1.11.4 -->
 <script src="<?= base_url('assets/AdminLTE/plugins/jquery-ui/jquery-ui.min.js') ?>"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
@@ -264,8 +292,6 @@
 <!-- DataTables  & Plugins -->
 <script src="<?= base_url('assets/AdminLTE/plugins/datatables/jquery.dataTables.min.js')?>"></script>
 <script src="<?= base_url('assets/AdminLTE/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js')?>"></script>
-<!-- <script src="<?= base_url('assets/AdminLTE/plugins/datatables-responsive/js/dataTables.responsive.min.js')?>"></script> -->
-<!-- <script src="<?= base_url('assets/AdminLTE/plugins/datatables-responsive/js/responsive.bootstrap4.min.js')?>"></script> -->
 <script src="<?= base_url('assets/AdminLTE/plugins/datatables-buttons/js/dataTables.buttons.min.js')?>"></script>
 <script src="<?= base_url('assets/AdminLTE/plugins/datatables-buttons/js/buttons.bootstrap4.min.js')?>"></script>
 <script src="<?= base_url('assets/AdminLTE/plugins/jszip/jszip.min.js')?>"></script>
@@ -286,16 +312,12 @@
  
  <script src="<?php echo('https://cdn.datatables.net/datetime/1.5.4/js/dataTables.dateTime.min.js
  ') ?>"></script>
- <!-- <script src="<?php echo('https://editor.datatables.net/extensions/Editor/js/dataTables.editor.js') ?>"></script>
-<script src="<?php echo('https://editor.datatables.net/extensions/Editor/js/editor.dataTables.js') ?>"></script> -->
 
 <!-- Ellipsis -->
 <script src="<?php echo('https://cdn.datatables.net/plug-ins/2.1.7/dataRender/ellipsis.js') ?>"></script>
 <!-- AdminLTE App -->
-<!-- <script src="<?= base_url('assets/AdminLTE/dist/js/style.js') ?>"></script> -->
 <script src="<?= base_url('assets/AdminLTE/dist/js/adminlte.min.js') ?>"></script>
 <!-- AdminLTE for demo purposes -->
-<!-- <script src="<?= base_url('assets/AdminLTE/dist/js/demo.js') ?>"></script> -->
 <!-- overlayScrollbars -->
 <script src="<?= base_url('assets/AdminLTE/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') ?>"></script>
 
@@ -368,15 +390,15 @@
     //   table.column.adjust();
     // });
 
-    $(function () {
-      var table1 = $("#example1").DataTable({
+    $(document).ready(function() {
+      let table1 = $("#example1").DataTable({
           "responsive": true, 
           "lengthChange": false, 
           "autoWidth": false,
           "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
       }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
       
-      var table2 = $('#example2').DataTable({
+      let table2 = $('#example2').DataTable({
           "paging": true,
           "lengthChange": false,
           "searching": true,
@@ -386,9 +408,6 @@
           "responsive": true,
           "scrollX": true,
       });
-
-      table1.columns.adjust();
-      table2.columns.adjust();
     });
 
   </script>
@@ -470,61 +489,61 @@
   
     })
     // BS-Stepper Init
-    document.addEventListener('DOMContentLoaded', function () {
-      window.stepper = new Stepper(document.querySelector('.bs-stepper'))
-    })
+    // document.addEventListener('DOMContentLoaded', function () {
+    //   window.stepper = new Stepper(document.querySelector('.bs-stepper'))
+    // })
   
     // DropzoneJS Demo Code Start
-    Dropzone.autoDiscover = false
+    // Dropzone.autoDiscover = false
   
-    // Get the template HTML and remove it from the doumenthe template HTML and remove it from the doument
-    var previewNode = document.querySelector("#template")
-    previewNode.id = ""
-    var previewTemplate = previewNode.parentNode.innerHTML
-    previewNode.parentNode.removeChild(previewNode)
+    // // Get the template HTML and remove it from the doumenthe template HTML and remove it from the doument
+    // var previewNode = document.querySelector("#template")
+    // previewNode.id = ""
+    // var previewTemplate = previewNode.parentNode.innerHTML
+    // previewNode.parentNode.removeChild(previewNode)
   
-    var myDropzone = new Dropzone(document.body, { // Make the whole body a dropzone
-      url: "/target-url", // Set the url
-      thumbnailWidth: 80,
-      thumbnailHeight: 80,
-      parallelUploads: 20,
-      previewTemplate: previewTemplate,
-      autoQueue: false, // Make sure the files aren't queued until manually added
-      previewsContainer: "#previews", // Define the container to display the previews
-      clickable: ".fileinput-button" // Define the element that should be used as click trigger to select files.
-    })
+    // var myDropzone = new Dropzone(document.body, { // Make the whole body a dropzone
+    //   url: "/target-url", // Set the url
+    //   thumbnailWidth: 80,
+    //   thumbnailHeight: 80,
+    //   parallelUploads: 20,
+    //   previewTemplate: previewTemplate,
+    //   autoQueue: false, // Make sure the files aren't queued until manually added
+    //   previewsContainer: "#previews", // Define the container to display the previews
+    //   clickable: ".fileinput-button" // Define the element that should be used as click trigger to select files.
+    // })
   
-    myDropzone.on("addedfile", function(file) {
-      // Hookup the start button
-      file.previewElement.querySelector(".start").onclick = function() { myDropzone.enqueueFile(file) }
-    })
+    // myDropzone.on("addedfile", function(file) {
+    //   // Hookup the start button
+    //   file.previewElement.querySelector(".start").onclick = function() { myDropzone.enqueueFile(file) }
+    // })
   
-    // Update the total progress bar
-    myDropzone.on("totaluploadprogress", function(progress) {
-      document.querySelector("#total-progress .progress-bar").style.width = progress + "%"
-    })
+    // // Update the total progress bar
+    // myDropzone.on("totaluploadprogress", function(progress) {
+    //   document.querySelector("#total-progress .progress-bar").style.width = progress + "%"
+    // })
   
-    myDropzone.on("sending", function(file) {
-      // Show the total progress bar when upload starts
-      document.querySelector("#total-progress").style.opacity = "1"
-      // And disable the start button
-      file.previewElement.querySelector(".start").setAttribute("disabled", "disabled")
-    })
+    // myDropzone.on("sending", function(file) {
+    //   // Show the total progress bar when upload starts
+    //   document.querySelector("#total-progress").style.opacity = "1"
+    //   // And disable the start button
+    //   file.previewElement.querySelector(".start").setAttribute("disabled", "disabled")
+    // })
   
-    // Hide the total progress bar when nothing's uploading anymore
-    myDropzone.on("queuecomplete", function(progress) {
-      document.querySelector("#total-progress").style.opacity = "0"
-    })
+    // // Hide the total progress bar when nothing's uploading anymore
+    // myDropzone.on("queuecomplete", function(progress) {
+    //   document.querySelector("#total-progress").style.opacity = "0"
+    // })
   
-    // Setup the buttons for all transfers
-    // The "add files" button doesn't need to be setup because the config
-    // `clickable` has already been specified.
-    document.querySelector("#actions .start").onclick = function() {
-      myDropzone.enqueueFiles(myDropzone.getFilesWithStatus(Dropzone.ADDED))
-    }
-    document.querySelector("#actions .cancel").onclick = function() {
-      myDropzone.removeAllFiles(true)
-    }
+    // // Setup the buttons for all transfers
+    // // The "add files" button doesn't need to be setup because the config
+    // // `clickable` has already been specified.
+    // document.querySelector("#actions .start").onclick = function() {
+    //   myDropzone.enqueueFiles(myDropzone.getFilesWithStatus(Dropzone.ADDED))
+    // }
+    // document.querySelector("#actions .cancel").onclick = function() {
+    //   myDropzone.removeAllFiles(true)
+    // }
     // DropzoneJS Demo Code End
   </script>
 

@@ -11,7 +11,6 @@ class ManualBookController extends CI_Controller
         $this->load->model('KategoriMBModel');
         $this->load->helper(array('form', 'url', 'file'));
         $this->load->library('upload', 'session');
-
     }
 
     public function index()
