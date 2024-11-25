@@ -160,13 +160,13 @@
           </li>
 
           <?php if($logged_in): ?>
-          <!-- <li class="nav-item">
+          <li class="nav-header">Settings</li>
+          <li class="nav-item">
             <a href="<?= site_url('users') ?>" class="nav-link">
               <i class="nav-icon fas fa-circle"></i>
               <p>User</p>
             </a>
-          </li> -->
-          <li class="nav-header">Settings</li>
+          </li>
           <li class="nav-item">
             <a href="<?= site_url('/logout') ?>" class="nav-link">
               <i class="nav-icon fas fa-circle"></i>

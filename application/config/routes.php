@@ -70,3 +70,8 @@ $route['login'] = 'AuthController/login';
 $route['logout'] = 'AuthController/logout';
 $route['login/login_process'] = 'AuthController/login_process';
 $route['users'] = 'AuthController/user';
+
+$route['users/add-user'] = 'AuthController/add';
+$route['users/delete-user/(:num)'] = 'AuthController/delete/$1';
+$route['users/edit-user'] = 'AuthController/edit';
+$route['AuthController/getUserData'] = 'AuthController/getUserData';

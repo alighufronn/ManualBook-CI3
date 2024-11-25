@@ -19,16 +19,56 @@ class UserModel extends CI_Model
 
     public function get_user($username, $password)
     {
+        // Cari user berdasarkan username
         $this->db->where('username', $username);
-        $this->db->where('password', md5($password));
-
         $query = $this->db->get($this->table);
-        return $query->row();
+
+        $user = $query->row();
+
+        // Verifikasi password
+        if ($user && password_verify($password, $user->password)) {
+            return $user;
+        } else {
+            return null; // Kembalikan null jika verifikasi gagal
+        }
     }
+
 
     public function getUser()
     {
         $query = $this->db->get($this->table); 
         return $query->result_array();
+    }
+
+    public function insert($data)
+    {
+        return $this->db->insert($this->table, $data);
+    }
+
+    public function delete($id)
+    {
+        $this->db->where('id', $id);
+
+        return $this->db->delete($this->table);
+    }
+
+    public function find($id)
+    {
+        if ($id === null) {
+            return null;
+        }
+        $this->db->where('id', $id);
+        $query = $this->db->get($this->table);
+        return $query->row();
+    }
+
+    public function update($id, $data)
+    {
+        if ($id === null) {
+            return false;
+        }
+
+        $this->db->where('id', $id);
+        return $this->db->update($this->table, $data);
     }
 }
